@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+
+@model CdOrganizer.Models.Artist
+
+<h5>Add yer Artist, bud</h5>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Description, "Description: ")
+  @Html.TextBoxFor(m => m.Description)
+  <input type="submit" value="Add this sukka" />
+}

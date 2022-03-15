@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@model CdOrganizer.Models.Genre
+
+<h4>Add a new genre.</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(m => m.Name)
+  @Html.TextBoxFor(m => m.Name)
+
+  @Html.Label("Select artist")
+  @Html.DropDownList("ArtistId")
+
+  <input type="submit" value="Add a new genre">
+}

@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@model CdOrganizer.Models.Artist
+
+<h2>Artist Details</h2>
+
+<h3>@Html.DisplayNameFor(m => m.Description): @Html.DisplayFor(m => m.Description)</h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This genre contains nothing</p>
+}
+else
+{
+  <h4>Genres in this Artist:</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.Genre.Name</li>
+  }
+  </ul>
+}
